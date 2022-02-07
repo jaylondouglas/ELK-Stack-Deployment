@@ -3,7 +3,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-In this project we deployed an Elasticsearch, Logstash, and Kibana stack (ELK). 
+In this project we deployed an Elasticsearch, Logstash, and Kibana stack (ELK). The ELK stack can be deployed simply by an ssh from your host.
 
 ![TODO: Update the path (name of picture) with the name of your diagram](Images/diagram_filename.png)
 https://docs.google.com/document/d/1VUHMzr6ZSPFB63T2d3uNQfJRMM_vGSbUvOs9nKNB-v4/edit
