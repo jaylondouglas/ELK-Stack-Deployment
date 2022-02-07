@@ -5,6 +5,49 @@ The files in this repository were used to configure the network depicted below.
 
 In this project we deployed an Elasticsearch, Logstash, and Kibana stack (ELK). The ELK stack can be deployed simply by an ssh from your host.
 
+Here is the YAML file that I used:
+
+---
+- name: Configure Elk VM with Docker
+  hosts: ELK
+  remote_user: sysadmin
+  become: true
+  tasks:
+    - name: Install docker.io
+      apt:
+        update_cache: yes
+        name: docker.io
+        state: present
+
+    - name: Install pip3
+      apt:
+        force_apt_get: yes
+        name: python3-pip
+        state: present
+
+    - name: Install Docker python module
+      pip:
+        name: docker
+        state: present
+
+    - name: Use more memory
+      sysctl:
+        name: vm.max_map_count
+        value: "262144"
+        state: present
+        reload: yes
+
+    - name: download and launch a docker elk container
+      docker_container:
+        name: elk
+        image: sebp/elk:761
+        state: started
+        restart_policy: always
+        published_ports:
+          - 5601:5601
+          - 9200:9200
+          - 5044:5044
+          - 
 ![TODO: Update the path (name of picture) with the name of your diagram](Images/diagram_filename.png)
 https://docs.google.com/document/d/1VUHMzr6ZSPFB63T2d3uNQfJRMM_vGSbUvOs9nKNB-v4/edit
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
