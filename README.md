@@ -102,3 +102,4 @@ edit the /etc/ansible/host file to add the ip addresses of webservers or elkserv
 - _Which URL do you navigate to in order to check that the ELK server is running? publicip
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._ ansible-playbook filebeat-playbook.yml
+Here is a link to my network diagram https://docs.google.com/document/d/1VUHMzr6ZSPFB63T2d3uNQfJRMM_vGSbUvOs9nKNB-v4/edit
