@@ -1,0 +1,17 @@
+Here are a few examples of bash scripts.
+
+scripts=/home/sysadmin/scripts
+
+# Setup scripts folder
+if [ ! -d $scripts ];
+then
+mkdir $scripts
+chown sysadmin:sysadmin $scripts
+fi
+
+# Check for an output file
+if [ ! $1 ]
+then
+    echo "Please specify an output file."
+    exit
+fi
